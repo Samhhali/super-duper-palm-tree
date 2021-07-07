@@ -26,19 +26,11 @@ app.get("/", (req, res) => {
 //routes
 const authRouter = require('./routes/auth');
 const thingsRouter = require('./routes/things');
+const citiesRouter = require('./routes/cities');
 
 app.use('/api/auth', authRouter);
 app.use('/api/things', thingsRouter);
-
-// //create user
-// function createUser(){
-//     admin.auth().createUser({
-//         email: String,
-//         Password: String,
-//     }).then(user => res.send(user))
-//     .catch(err => res.status(422).send({ error: err }));
-// }
-
+app.use('/api/cities', citiesRouter);
 
 
 
