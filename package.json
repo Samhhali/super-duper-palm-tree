@@ -2,7 +2,8 @@
   "dependencies": {
     "@google-cloud/storage": "^5.8.5",
     "express": "^4.17.1",
-    "firebase-admin": "^9.10.0"
+    "firebase-admin": "^9.10.0",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"

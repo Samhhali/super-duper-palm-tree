@@ -1,12 +1,14 @@
 const admin = require('firebase-admin')
 const express = require('express');
 const http = require('http');
-const path = require("path");
 
 const serviceAccount = require('./serviceAccountKey.json')
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://zamah-1301-default-rtdb.europe-west1.firebaseio.com",
 })
+//const storage = firebase.storage();
+
 
 port = 3000;
 const app = express();
