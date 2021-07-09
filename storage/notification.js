@@ -1,6 +1,6 @@
 const {Storage} = require('@google-cloud/storage');
 const storage = new Storage();
-const myBucket = storage.bucket('my-bucket');
+const myBucket = storage.bucket('zamah-1301.appspot.com');
 
 const notification = myBucket.notification('1');
 

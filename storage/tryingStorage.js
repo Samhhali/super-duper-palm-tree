@@ -5,7 +5,7 @@ const { Storage } = require('@google-cloud/storage');
 
 const storage = new Storage();
 
-const bucketName = storage.bucket('mems');
+const bucketName = storage.bucket('zamah-1301.appspot.com');
 
 //const file = bucket.file('IO2019.jpeg');
 
