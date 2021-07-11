@@ -107,37 +107,37 @@ router.get('/collectionGroup', async (req, res) => {
 
 });
 
-router.get('/:id?', async (req, res) => {
-    const id = req.params.id;
-    const snapshot = await citiesRef.doc(id).get();
+// router.get('/:id?', async (req, res) => {
+//     const id = req.params.id;
+//     const snapshot = await citiesRef.doc(id).get();
 
-    if (snapshot.exists) {
-        try {
-            let data = snapshot.data();
-            console.log(snapshot.createTime);
-            console.log(snapshot.ref.parent);
+//     if (snapshot.exists) {
+//         try {
+//             let data = snapshot.data();
+//             console.log(snapshot.createTime);
+//             console.log(snapshot.ref.parent);
 
-                console.log(snapshot.id, "=> ", data.state);
+//                 console.log(snapshot.id, "=> ", data.state);
 
-        } catch (error) {
-            return res.json({ sucess: false, msg: " Wrong input" });
-        }
-    }
+//         } catch (error) {
+//             return res.json({ sucess: false, msg: " Wrong input" });
+//         }
+//     }
 
-    const doc = await citiesRef.doc('SF').get();
-    const data = doc.data();
-    if (!doc.exists) {
-        console.log('No such document!');
-    } else {
-        let regionA = data.regions[0];
-        let regionB = data.regions[1];
+//     const doc = await citiesRef.doc('SF').get();
+//     const data = doc.data();
+//     if (!doc.exists) {
+//         console.log('No such document!');
+//     } else {
+//         let regionA = data.regions[0];
+//         let regionB = data.regions[1];
 
-        console.log('Document id:', data.name, " region 1 =>  ", regionA,  " region 2 =>  ", regionB);
-    }
-    return res.json({ sucess: false, msg: " Wrong input" });
+//         console.log('Document id:', data.name, " region 1 =>  ", regionA,  " region 2 =>  ", regionB);
+//     }
+//     return res.json({ sucess: false, msg: " Wrong input" });
 
 
-});
+// });
 
 router.get('/paginate/', async (req, res) => {
 
@@ -159,7 +159,7 @@ router.get('/paginate/', async (req, res) => {
         console.log(doc.id, " => ", doc.data())
     })
 
-    return res.json('Response');
+    return res.send('s');
 
 
 });

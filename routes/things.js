@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const admin = require('firebase-admin')
+const admin = require('firebase-admin');
+const { default: i18next } = require('i18next');
+const {I18n} = require('i18n');
 
 const db = admin.firestore();
 const thingsRef = db.collection('things');
@@ -19,7 +21,7 @@ router.get('/', async (req, res) => {
     let data = doc.data();
     console.log(data.name ,doc.get('number'));
   });
-  return res.json({});
+  return res.send({message: req.__('docs')});
 
 });
 module.exports = router;
